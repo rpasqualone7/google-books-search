@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import {FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 import SavedGallery from '../SavedGallery';
 import Logo from '../Logo';
 
 class SavedGlobal extends Component {
 	state = {
 		items: [],
-		promiseIsResolved: flase
+		promiseIsResolved: false
 	};
 	loadSaved() {
 

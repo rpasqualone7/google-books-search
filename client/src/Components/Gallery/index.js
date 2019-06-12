@@ -30,7 +30,7 @@ class Gallery extends Component {
 
 				{
 					this.props.items.map((item, index) => {
-						let { title, imageLinks, infoLink, description, authors } = item.volumeInfo;
+						let { imageLinks, infoLink, description, authors } = item.volumeInfo;
 						let bookTitle = item.volumeInfo.title;
 						return (
 							<div key={index} className="col-sm-12 col-md-4 col-lg-12 book-column">
@@ -42,14 +42,14 @@ class Gallery extends Component {
 										image={item.volumeInfo.imageLinks}
 										link={item.volumeInfo.infoLink}
 										saveBook={this.saveBook} />
-									<a className="book" href={infoLink} target="_blank">
+									<a className="book" href={infoLink} target="_blank" rel="noopener noreferrer">
 										<div className="book-title white-text">
 											<h3>{bookTitle}</h3>
 										</div>
 									</a>
 									<p className="authors"><strong>Author: </strong>{authors}</p>
 									<div className="book-inner-flex">
-										<a className="book" href={infoLink} target="_blank">
+										<a className="book" href={infoLink} target="_blank" rel="noopener noreferrer">
 											<div className="book-image-wrapper">
 												<img src={imageLinks !== undefined ? imageLinks.thumbnail : altImage}
 													alt="Book Image"

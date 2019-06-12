@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {FormGorup, FormControl, InputGroup, Glyphicon} from 'react-bootsrtap';
+import {FormGroup, FormControl, InputGroup, } from 'react-bootstrap';
 import Gallery from "../Gallery";
 import Logo from "../Logo";
 import "./style.css";
@@ -16,7 +16,7 @@ class Search extends Component {
 
 	search() {
 		const BASE_URL ='https://www.googleapis.com/books/v1/volumes?q=';
-		fetch($`{BASE_URL}${this.state.query}`, {method: 'GET'})
+		fetch(`${BASE_URL}${this.state.query}`, {method: 'GET'})
 		.then(response => response.json())
 		.then(json => {
 			let {items} = json;
@@ -37,13 +37,13 @@ class Search extends Component {
 						placeholder = "Search for a book"
 						onChange = { event => this.setState({query: event.target.value})}
 						onKeyPress = { event => {
-							if(event.key == "Enter"){
+							if(event.key === "Enter"){
 								this.search();
 							}
 						}}
 						/>
 						<InputGroup.Addon onClick={() => this.search()}>
-							<Glyphicon glyph="search"></Glyphicon>
+							{/* <Glyphicon glyph="search"></Glyphicon> */}
 						</InputGroup.Addon>
 						</InputGroup>
 					</FormGroup>

@@ -33,7 +33,7 @@ class SavedGallery extends Component {
 					</div>
 					{
 						this.state.items.map((item, index) => {
-							let { authors, title, image, link, descriprion, _id } = item;
+							let { authors, image, link, description,} = item;
 							let bookTitle = item.title;
 							return(
 								<div key={index} className="col-sm-12 col-md-4 col-lg-12 book-column">
@@ -42,14 +42,14 @@ class SavedGallery extends Component {
 										id={item}
 									deleteSaved={this.deleteSaved.bind(this)}
 								/>}
-								<a className="book" href={link} target="_blank">
+								<a className="book" href={link} target="_blank" rel="noopener noreferrer">
 									<div className="book-title white-text">
 										<h3>{bookTitle}</h3>
 									</div>
 								</a>
 								<p><strong>Author: </strong>{authors}</p>
 								<div className="book-inner-flex">
-									<a className="book" href={link} target="_blank">
+									<a className="book" href={link} target="_blank" rel="noopener noreferrer">
 										<div className="book-image-wrapper">
 											<img src={image[0] !== undefined ? image[0].thumbnail : altImage}
 											alt="Book Image"

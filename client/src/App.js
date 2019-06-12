@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Search from "./pages/search";
 import Saved from "./pages/saved";
-import Nav from "./components/Nav";
+import Nav from "./Components/NavTabs";
+import "./App.css";
 
 class App extends Component {
   render() {
